@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Para mi VIRGII ❤️</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- corazones animados en el fondo -->
+    <div class="hearts">
+        <!-- duplicaremos varios corazones para saturar el fondo -->
+        <span class="heart"></span>
+        <span class="heart"></span>
+        <span class="heart"></span>
+        <span class="heart"></span>
+        <span class="heart"></span>
+        <span class="heart"></span>
+        <span class="heart"></span>
+        <span class="heart"></span>
+        <span class="heart"></span>
+        <span class="heart"></span>
+    </div>
+
+    <!-- login simple -->
+    <div id="login">
+        <h2>Ingresa la contraseña</h2>
+        <input type="password" id="password" placeholder="dd/mm/aaaa">
+        <button id="btnLogin">Entrar</button>
+        <p id="error" class="hidden">No es la fecha correcta, amor.</p>
+    </div>
+
+    <!-- carta de amor -->
+    <div id="letter" class="hidden">
+        <div class="sheet">
+            <div class="title-box">
+                <h1>Para mi VIRGII ❤️</h1>
+            </div>
+            <div class="content">
+                <p>Quiero que sepas que eres lo más hermoso 💘 y valioso en mi vida. Me da muchísimo gusto haberte conocido y que el destino te haya puesto en mi camino, porque desde que llegaste te convertiste en la persona más especial para mí en todo el mundo. No pensé que íbamos a tener un amor tan bonito 💖, tan sincero y tan fuerte, y ahora me llena de felicidad pensar que te tengo a mi lado.</p>
+                <p>Te amo con todo mi corazón 💕 y te adoro con toda mi alma. De verdad deseo que nuestro amor crezca cada día más y que nunca se apague lo que sentimos. Me encanta pasar tiempo contigo, hablar contigo, reír contigo y simplemente estar a tu lado 💞. Nunca dudes que sí te amo, porque si lo dudara sería muy tonta, ya que yo te amo con toda mi alma y con cada parte de mí.</p>
+                <p>Eres mi terroncito de azúcar 💓, porque endulzas mis días incluso cuando no son perfectos. Eres el moco de mi gripe, porque no quiero que te vayas nunca de mí, quiero que siempre estés pegadito a mi vida 💗. Virgii, mi amor, eres un chico muy lindo, atento conmigo, cariñoso y especial, y agradezco muchísimo que me toleres tanto, que tengas paciencia conmigo y que sigas eligiéndome cada día.</p>
+                <p>Gracias por cuidarme, por entenderme, por abrazarme cuando lo necesito y por hacerme sentir amada. Eres mi lugar seguro, mi tranquilidad, mi alegría y mi persona favorita. No quiero imaginar una vida donde tú no estés, porque contigo todo se siente más bonito, más ligero y más lleno de amor.</p>
+                <p>Quiero seguir construyendo recuerdos contigo, seguir creciendo juntos, seguir aprendiendo uno del otro y que nuestro amor sea cada vez más fuerte. Siempre voy a elegirte a ti, siempre voy a quererte y siempre voy a estar orgullosa de tenerte en mi vida.</p>
+                <p>Te amo más de lo que las palabras pueden explicar, mi VIRGII 💌</p>
+                <p>TE AMOOOOO MUCHOOOOOO 💖💖, BESOSSS VITUALESSSS 😘, MUAAAAAAACK 💋</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- música de fondo (coloca tu propia ruta) -->
+    <audio id="music" src="" autoplay loop></audio>
+
+    <script>
+        const PASSWORD = '13/11/2023';
+        const btn = document.getElementById('btnLogin');
+        const input = document.getElementById('password');
+        const error = document.getElementById('error');
+        const loginDiv = document.getElementById('login');
+        const letter = document.getElementById('letter');
+
+        btn.addEventListener('click', () => {
+            if (input.value === PASSWORD) {
+                loginDiv.classList.add('hidden');
+                letter.classList.remove('hidden');
+                error.classList.add('hidden');
+            } else {
+                error.classList.remove('hidden');
+            }
+        });
+
+        // permitir presionar Enter
+        input.addEventListener('keyup', (e) => {
+            if (e.key === 'Enter') btn.click();
+        });
+    </script>
+</body>
+</html>
